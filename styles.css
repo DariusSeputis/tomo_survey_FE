@@ -22,6 +22,7 @@ body {
 
 .butonoSpalva {
   background-color: #cdbc82;
+  max-height: 45px;
 }
 
 #imageContainer {
@@ -133,7 +134,8 @@ button {
 }
 
 fieldset {
-  /* TODO lygiavimas i kairia  */
+  /* lygiavimas keireja formos inputu */
+  text-align: left;
 }
 
 @media (max-width: 1200px) {
