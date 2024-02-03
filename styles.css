@@ -1,0 +1,168 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #e8e6e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+/* antro puslapio nuotrauka */
+.imagas {
+  width: 50%;
+}
+
+.centruotasFlexas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.butonoSpalva {
+  background-color: #cdbc82;
+}
+
+#imageContainer {
+  margin: 20px;
+}
+
+#Kvietimas {
+  text-align: center; /* Centruoja visą tekstą bloke */
+}
+
+#KvietimasButton {
+  display: block; /* Padaro mygtuką blokiniu elementu */
+  margin: 0 auto; /* Centruoja mygtuką horizontaliai */
+  margin-top: 20px; /* Prideda tarpą virš mygtuko */
+}
+
+#Kvietimas p {
+  font-size: 16px; /* Nustato teksto dydį */
+  margin: 10px 0; /* Prideda tarpą prieš ir po kiekvieno pastraipos */
+  /* Galite pridėti kitų stilių, pavyzdžiui, font-family, color ir kt. */
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+.temporary-message {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  /* Kitos stilių nustatymai */
+}
+
+.flexCentras {
+  display: flex;
+  justify-content: center;
+}
+
+#1,
+#2,
+#3,
+#4,
+#5,
+#6,
+#7,
+#8 {
+  flex-wrap: wrap;
+}
+
+#test {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#testImage {
+  max-width: 100%; /* Užtikrina, kad nuotrauka prisitaikytų prie ekrano dydžio */
+  height: auto;
+}
+
+button {
+  border-radius: 20px; /* Apvalūs kraštai */
+  margin: 10px; /* Atstumas tarp mygtukų ir nuotraukos */
+  display: block;
+  /* Galite pridėti papildomų stilių mygtukams čia */
+}
+
+#trueButton,
+#falseButton {
+  font-size: 60px;
+  font-weight: 700;
+  border-radius: 0;
+  height: 8rem;
+  width: 8rem;
+  margin-top: 20%;
+}
+
+#trueButtonDivas,
+#falseButtonDivas {
+  display: none;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: space-between; /* Išdėsto elementus į abu kraštus */
+  padding: 10px; /* Atstumas nuo kraštų */
+}
+
+.errorMesagai {
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  font: arial;
+}
+
+#form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+fieldset {
+  /* TODO lygiavimas i kairia  */
+}
+
+@media (max-width: 1200px) {
+  /* CSS taisyklės mažesniems ekranams (pvz., mobiliesiems) */
+  #trueButtonDivas,
+  #falseButtonDivas {
+    display: block;
+  }
+  #trueButtonDivas {
+    margin-right: 12%;
+  }
+
+  #falseButtonDivas {
+    margin-left: 12%;
+  }
+  /* antro puslapio nuotrauka */
+  .imagas {
+    width: 60%;
+  }
+}
+
+@media (max-width: 750px) {
+  #form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  #form {
+    grid-template-columns: 1fr;
+  }
+}
