@@ -277,6 +277,10 @@ function startTest1() {
   document.getElementById("textvirsA2").textContent = "";
   document.getElementById("textvirsL1").textContent = "";
   document.getElementById("textvirsL2").textContent = "";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas juodaodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas baltaodis"; // pridejau 2024 02 05
   document.getElementById("1").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET1);
@@ -294,6 +298,10 @@ function startTest2() {
   document.getElementById("textvirsA2").textContent = "";
   document.getElementById("textvirsL1").textContent = "";
   document.getElementById("textvirsL2").textContent = "";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas malonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("2").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET2);
@@ -311,6 +319,10 @@ function startTest3() {
   document.getElementById("textvirsL").textContent = "JUODAODIS";
   document.getElementById("textvirsL1").textContent = "ARBA";
   document.getElementById("textvirsL2").textContent = "MALONUS ŽODIS";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas baltaodis arba nemalonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas juodaodis arba malonus žodis"; // pridejau 2024 02 05
   document.getElementById("3").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET1);
@@ -328,6 +340,10 @@ function startTest4() {
   document.getElementById("textvirsL").textContent = "BALTAODIS";
   document.getElementById("textvirsL1").textContent = "ARBA";
   document.getElementById("textvirsL2").textContent = "NEMALONUS ŽODIS";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas juodaodis arba malonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas baltaodis arba nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("4").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET2);
@@ -345,6 +361,10 @@ function startTest5() {
   document.getElementById("textvirsL").textContent = "JUODAODIS";
   document.getElementById("textvirsL1").textContent = "";
   document.getElementById("textvirsL2").textContent = "";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas baltaodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas juodaodis"; // pridejau 2024 02 05
   document.getElementById("5").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET1);
@@ -362,6 +382,10 @@ function startTest6() {
   document.getElementById("textvirsL").textContent = "MALONUS ŽODIS";
   document.getElementById("textvirsL1").textContent = "";
   document.getElementById("textvirsL2").textContent = "";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas nemalonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas malonus žodis"; // pridejau 2024 02 05
   document.getElementById("6").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET1);
@@ -379,6 +403,10 @@ function startTest7() {
   document.getElementById("textvirsL").textContent = "JUODAODIS";
   document.getElementById("textvirsL1").textContent = "ARBA";
   document.getElementById("textvirsL2").textContent = "NEMALONUS ŽODIS";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> - jei rodomas baltaodis arba malonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas juodaodis arba nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("7").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET1);
@@ -397,6 +425,10 @@ function startTest8() {
   document.getElementById("textvirsL").textContent = "BALTAODIS";
   document.getElementById("textvirsL1").textContent = "ARBA";
   document.getElementById("textvirsL2").textContent = "MALONUS ŽODIS";
+  document.getElementById("textasPoNuotrauka1").innerHTML =
+    "<b>A</b> jei rodomas juodaodis arba nemalonus žodis"; // pridejau 2024 02 05
+  document.getElementById("textasPoNuotrauka2").innerHTML =
+    "<b>L</b> - jei rodomas baltaodis arba malonus žodis"; // pridejau 2024 02 05
   document.getElementById("8").style.display = "none";
   document.getElementById("test").style.display = "flex";
   showNextImage(imagesSET2);
@@ -420,8 +452,8 @@ function showNextImage(imagesArray) {
 
 function recordAnswer(answer, imagesArray) {
   const timeTaken = (new Date() - startTime) / 1000;
-  const imageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
   const correctAnswer = imagesArray[imageIndex].value;
+  const imageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
   checkAnswer(answer, correctAnswer); // Čia patikrinkite atsakymą
   const result = {
     title: imagesArray[imageIndex].title,
