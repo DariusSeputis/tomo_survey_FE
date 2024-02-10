@@ -241,9 +241,9 @@
       <div>
         <img id="testImage" src="" alt="Testo nuotrauka" />
         <div>
-          <p>Prašome kuo greičiau paspasuti</p>
-          <p id="textasPoNuotrauka1"></p>
-          <p id="textasPoNuotrauka2"></p>
+          <p class="textasPoTestNuotrauka" >Prašome kuo greičiau paspasuti</p>
+          <p class="textasPoTestNuotrauka" id="textasPoNuotrauka1"></p>
+          <p class="textasPoTestNuotrauka" id="textasPoNuotrauka2"></p>
         </div>
       </div>
       <!-- Čia galite pridėti mygtukus ar kitą testo turinį -->
@@ -289,7 +289,7 @@
             <input type="radio" id="Moteris" name="gender" />
             <label for="Moteris">Moteris</label> <br />
             <input type="radio" id="Kita" name="gender" />
-            <label for="Moteris">Kita/Nenoriu atskleisti</label> <br />
+            <label for="Kita">Kita/Nenoriu atskleisti</label> <br />
           </fieldset>
         </div>
 
@@ -396,100 +396,6 @@
     >
       Aciu uz dalyvavima
     </p>
-    <script>
-      document
-        .getElementById("form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          document.querySelector('input[name="amzius"]:checked')
-            ? (document.getElementById("errorasAmzius").style.display = "none")
-            : (document.getElementById("errorasAmzius").style.display =
-                "block");
-
-          document.querySelector('input[name="gender"]:checked')
-            ? (document.getElementById("errorasLytis").style.display = "none")
-            : (document.getElementById("errorasLytis").style.display = "block");
-
-          document.querySelector('input[name="dpatirtis"]:checked')
-            ? (document.getElementById("errorasDpatirtis").style.display =
-                "none")
-            : (document.getElementById("errorasDpatirtis").style.display =
-                "block");
-
-          document.querySelector('input[name="education"]:checked')
-            ? (document.getElementById("errorasIssilavinimas").style.display =
-                "none")
-            : (document.getElementById("errorasIssilavinimas").style.display =
-                "block");
-
-          document.querySelector('input[name="dsritis"]:checked')
-            ? (document.getElementById("errorasDsritis").style.display = "none")
-            : (document.getElementById("errorasDsritis").style.display =
-                "block");
-
-          document.querySelector('input[name="miestas"]:checked')
-            ? (document.getElementById("errorasMiestas").style.display = "none")
-            : (document.getElementById("errorasMiestas").style.display =
-                "block");
-
-          document.querySelector('input[name="pareigos"]:checked')
-            ? (document.getElementById("errorasPareigos").style.display =
-                "none")
-            : (document.getElementById("errorasPareigos").style.display =
-                "block");
-
-          let age = document.querySelector('input[name="amzius"]:checked')
-            .labels[0].innerText;
-          let gender = document.querySelector('input[name="gender"]:checked')
-            .labels[0].innerText;
-          let education = document.querySelector(
-            'input[name="education"]:checked'
-          ).labels[0].innerText;
-          let workExperience = document.querySelector(
-            'input[name="dpatirtis"]:checked'
-          ).labels[0].innerText;
-          let loc = document.querySelector('input[name="miestas"]:checked')
-            .labels[0].innerText;
-          let pareigos = document.querySelector(
-            'input[name="pareigos"]:checked'
-          ).labels[0].innerText;
-          let darboSritis = document.querySelector(
-            'input[name="dsritis"]:checked'
-          ).labels[0].innerText;
-
-          let result = {
-            age: age,
-            gender: gender,
-            education: education,
-            workExperience: workExperience,
-            loc: loc,
-            pareigos: pareigos,
-            darboSritis: darboSritis,
-          };
-
-          answersRecord.push(result);
-
-          console.log("answersRecord", answersRecord);
-          // CIA SIUNCIAMA I BACKENDA
-          fetch(`https://tomowebappasbe.azurewebsites.net/sendData`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
-            },
-            body: JSON.stringify({ testo_duomenys: answersRecord }),
-          })
-            .then((res) => res.json())
-            .then((data) => console.log("ATSAKYMAS IS BE:", data))
-            .catch((error) => console.log("ATSAKYMAS IS BE ERRORAS:", error));
-
-          // tuscia forma aciu bye bye
-          document.getElementById("9").style.display = "none";
-          document.getElementById("aciu").style.display = "block";
-        });
-    </script>
-
     <script src="script2.js"></script>
   </body>
 </html>

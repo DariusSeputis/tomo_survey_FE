@@ -10,6 +10,7 @@ body {
 
 /* antro puslapio nuotrauka */
 .imagas {
+  max-width: 900px;
   width: 50%;
 }
 
@@ -110,6 +111,14 @@ button {
   margin-top: 20%;
 }
 
+#textvirsA,
+#textvirsA1,
+#textvirsA2,
+#textvirsL,
+#textvirsL1,
+#textvirsL2 {
+}
+
 #trueButtonDivas,
 #falseButtonDivas {
   display: none;
@@ -163,6 +172,9 @@ fieldset {
   font-size: 20px; /* Teksto dydis */
 }
 
+.textasPoTestNuotrauka {
+}
+
 @media (max-width: 1200px) {
   /* CSS taisyklės mažesniems ekranams (pvz., mobiliesiems) */
   #trueButtonDivas,
@@ -180,16 +192,42 @@ fieldset {
   .imagas {
     width: 60%;
   }
+  #trueButton,
+  #falseButton {
+    font-size: 50px;
+    font-weight: 700;
+    border-radius: 0;
+    height: 7rem;
+    width: 7rem;
+    margin-top: 20%;
+  }
 }
 
 @media (max-width: 750px) {
   #form {
     grid-template-columns: 1fr 1fr;
   }
+  #testImage {
+    width: 200px;
+  }
+  .textasPoTestNuotrauka {
+    font-size: 15px;
+  }
+  #textvirsA,
+  #textvirsA1,
+  #textvirsA2,
+  #textvirsL,
+  #textvirsL1,
+  #textvirsL2 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 500px) {
   #form {
     grid-template-columns: 1fr;
+  }
+  #testImage {
+    width: 150px;
   }
 }

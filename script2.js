@@ -5,6 +5,7 @@ let answersRecord = [];
 let i = 1;
 let currentTest = 1;
 let isWindowActive = "instruction"; // Galimos reikšmės: '', 'test', 'instruction'
+var currentState = 0;
 
 const imagesSET1 = [
   // A- jei rodomas juodaodis; L- jei rodomas baltaodis
@@ -189,86 +190,123 @@ function setCurrentImagesArray(array) {
   currentImagesArray = array;
 }
 // Eventas, kuris laukia klavišų paspaudimo ir užrašo atsakymą (true arba false) į rezultatus
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("KvietimasButton")
-    .addEventListener("click", startAprasas);
-  document
-    .getElementById("AprasasButton")
-    .addEventListener("click", startInstr_1is8);
-  document.getElementById("1is8Button").addEventListener("click", startTest1);
-  document.getElementById("2is8Button").addEventListener("click", startTest2);
-  document.getElementById("3is8Button").addEventListener("click", startTest3);
-  document.getElementById("4is8Button").addEventListener("click", startTest4);
-  document.getElementById("5is8Button").addEventListener("click", startTest5);
-  document.getElementById("6is8Button").addEventListener("click", startTest6);
-  document.getElementById("7is8Button").addEventListener("click", startTest7);
-  document.getElementById("8is8Button").addEventListener("click", startTest8);
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('KvietimasButton').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(1); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('AprasasButton').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną
+		updateState(2); // Iškviečia funkciją 'startAprasas',
+	});
+	document.getElementById('1is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(3); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('2is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(4); // Iškviečia funkcijąkur 'startAprasas'
 
-  document.addEventListener("keydown", function (event) {
+	});
+	document.getElementById('3is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(5); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('4is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(6); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('5is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(7); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('6is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(8); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('7is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(9);; // Iškviečia funkciją 'startAprasas'
+
+	});
+	document.getElementById('8is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(10);; // Iškviečia funkciją 'startAprasas'
+	});
+
+document.addEventListener('keydown', function(event) {
     // Instrukcijų režimas: reaguoja tik į 'Space' klavišą
-    if (isWindowActive === "instruction" && event.code === "Space") {
-      // Funkcija, kuri patikrina, ar elementas yra matomas ir aktyvus
-      document.getElementById(currentActiveButton).click();
-      if (currentActiveButton === "KvietimasButton") {
-        currentActiveButton = "AprasasButton";
-      } else if (currentActiveButton === "AprasasButton") {
-        currentActiveButton = "1is8Button";
-      } else if (currentActiveButton === "1is8Button") {
-        currentActiveButton = "2is8Button";
-      } else if (currentActiveButton === "2is8Button") {
-        currentActiveButton = "3is8Button";
-      } else if (currentActiveButton === "3is8Button") {
-        currentActiveButton = "4is8Button";
-      } else if (currentActiveButton === "4is8Button") {
-        currentActiveButton = "5is8Button";
-      } else if (currentActiveButton === "5is8Button") {
-        currentActiveButton = "6is8Button";
-      } else if (currentActiveButton === "6is8Button") {
-        currentActiveButton = "7is8Button";
-      } else if (currentActiveButton === "7is8Button") {
-        currentActiveButton = "8is8Button";
-      }
+    if (event.key === ' ') {
+        performAction(); // Atlikti veiksmą pagal esamą būseną
+        updateState(currentState + 1); // Pereiti į kitą būseną
     }
     // Testo režimas: reaguoja tik į 'A' ir 'L' klavišus
-    if (isWindowActive === "test") {
-      if (event.key === "a") {
-        // Logika 'A' klavišo paspaudimui testo režime
-        // Pavyzdžiui, įrašyti atsakymą ir rodyti kitą paveikslėlį
-        recordAnswer("Teisingas", currentImagesArray);
-        showNextImage(currentImagesArray);
-      } else if (event.key === "l") {
-        // Logika 'L' klavišo paspaudimui testo režime
-        // Pavyzdžiui, įrašyti atsakymą ir rodyti kitą paveikslėlį
-        recordAnswer("Neteisingas", currentImagesArray);
-        showNextImage(currentImagesArray);
-      }
+    if (isWindowActive === 'test') {
+        if (event.key === 'A' || event.key === 'a') {
+        document.getElementById('trueButton').click();
+    } else if (event.key === 'L' || event.key === 'l') {
+        document.getElementById('falseButton').click();
     }
-  });
+    }
 });
+});
+
+function updateState(newState) {
+    currentState = newState;
+}
+ 
+function performAction() {
+    switch (currentState) {
+        case 0:
+            startAprasas();
+            break;
+        case 1:
+            startInstr_1is8();
+            break;
+		case 2:
+            startTest1();
+            break;
+        case 3:
+            startTest2();
+            break;
+		case 4:
+            startTest3();
+            break;
+        case 5:
+            startTest4();
+            break;
+        case 6:
+            startTest5();
+            break;
+        case 7:
+            startTest6();
+            break;
+		case 8:
+            startTest7();
+            break;
+        case 9:
+            startTest8();
+            break;
+    }
+}
 
 // Funkcija Tyrimo Aprašymui
 function startAprasas() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "instruction";
   document.getElementById("Kvietimas").style.display = "none";
   document.getElementById("Aprasymas").style.display = "block";
   document.getElementById("Aprasymas").focus();
-  console.log("isWindowActive status:", isWindowActive);
 }
 // Funkcija Tyrimo INSTRUKCIJOS1/8
 function startInstr_1is8() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "instruction";
   document.getElementById("Aprasymas").style.display = "none";
   document.getElementById("1").style.display = "grid";
   document.getElementById("2").style.display = "none";
   document.getElementById("test").style.display = "none";
-  console.log("isWindowActive status:", isWindowActive);
 }
 // Funkcija testo pradžiai 1
 function startTest1() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "JUODAODIS";
@@ -283,13 +321,11 @@ function startTest1() {
     "<b>L</b> - jei rodomas baltaodis"; // pridejau 2024 02 05
   document.getElementById("1").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET1);
   currentImagesArray = imagesSET1;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 2
 function startTest2() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "MALONUS ŽODIS";
@@ -304,13 +340,11 @@ function startTest2() {
     "<b>L</b> - jei rodomas nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("2").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET2);
   currentImagesArray = imagesSET2;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 3
 function startTest3() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "BALTAODIS";
@@ -325,13 +359,11 @@ function startTest3() {
     "<b>L</b> - jei rodomas juodaodis arba malonus žodis"; // pridejau 2024 02 05
   document.getElementById("3").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET1);
   currentImagesArray = imagesSET3;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 4
 function startTest4() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "JUODAODIS";
@@ -346,13 +378,11 @@ function startTest4() {
     "<b>L</b> - jei rodomas baltaodis arba nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("4").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET2);
   currentImagesArray = imagesSET4;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 5
 function startTest5() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "BALTAODIS";
@@ -367,13 +397,11 @@ function startTest5() {
     "<b>L</b> - jei rodomas juodaodis"; // pridejau 2024 02 05
   document.getElementById("5").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET1);
   currentImagesArray = imagesSET5;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 6
 function startTest6() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "NEMALONUS ŽODIS";
@@ -388,13 +416,11 @@ function startTest6() {
     "<b>L</b> - jei rodomas malonus žodis"; // pridejau 2024 02 05
   document.getElementById("6").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET1);
   currentImagesArray = imagesSET6;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 7
 function startTest7() {
-  console.log("isWindowActive status:", isWindowActive);
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "BALTAODIS";
@@ -409,14 +435,11 @@ function startTest7() {
     "<b>L</b> - jei rodomas juodaodis arba nemalonus žodis"; // pridejau 2024 02 05
   document.getElementById("7").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET1);
   currentImagesArray = imagesSET7;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 // Funkcija testo pradžiai 8
 function startTest8() {
-  console.log("isWindowActive status:", isWindowActive);
-
   isWindowActive = "test";
   startTime = new Date();
   document.getElementById("textvirsA").textContent = "JUODAODIS";
@@ -431,9 +454,8 @@ function startTest8() {
     "<b>L</b> - jei rodomas baltaodis arba malonus žodis"; // pridejau 2024 02 05
   document.getElementById("8").style.display = "none";
   document.getElementById("test").style.display = "flex";
-  showNextImage(imagesSET2);
   currentImagesArray = imagesSET8;
-  console.log("isWindowActive status:", isWindowActive);
+  showNextImage(null, currentImagesArray);
 }
 
 // Funkcija, kuri rodo kitą paveiksliuką arba rezultatus, jei visi paveiksliukai buvo parodyti
@@ -448,23 +470,69 @@ function showNextImage(imagesArray) {
     i++;
     instrukction(i);
   }
+}function showNextImage(userAnswer, imagesArray) {
+	startTime = new Date();
+    if (currentImageIndex < imagesArray.length) {
+		console.log(currentImageIndex, " ", imagesArray.length );
+		var correctAnswer = imagesArray[currentImageIndex].value;
+		var imageElement = document.getElementById('testImage');
+		imageElement.src = imagesArray[currentImageIndex].url;
+		if (userAnswer == correctAnswer) {
+			currentImageIndex++;
+			if (currentImageIndex <= imagesArray.length) {
+                // Iškviečiame funkciją vėl su nauju indeksu
+                showNextImage(null, imagesArray);
+            }
+		}
+    } else {
+        currentImageIndex = 0; // Jei norite pradėti iš naujo
+		i++;
+		instrukction(i);
+    }
 }
 
 function recordAnswer(answer, imagesArray) {
-  const timeTaken = (new Date() - startTime) / 1000;
-  const correctAnswer = imagesArray[imageIndex].value;
-  const imageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
-  checkAnswer(answer, correctAnswer); // Čia patikrinkite atsakymą
-  const result = {
-    title: imagesArray[imageIndex].title,
-    answer: answer,
-    timeTaken: timeTaken,
-  };
-
-  answersRecord.push(result);
-
-  // Išspausdinkite naują įrašą konsolėje
-  console.log("Naujas įrašas:", result);
+    const timeTaken = (new Date() - startTime) / 1000;
+    const correctAnswer = imagesArray[currentImageIndex].value;
+    const title = imagesArray[currentImageIndex].title;
+    // Tikrinkite, ar rezultatas su tokiu pavadinimu jau yra masyve
+    const existingResultIndex = answersRecord.findIndex(result => result.title === title);
+	let answer2 = null;
+	if (answer === correctAnswer){
+		answer2 = "Teisingai";
+	} else {
+		answer2 = "Neteisingai";
+		var testDiv = document.getElementById('test');
+		var errorMessage = document.createElement('div');
+			errorMessage.textContent = 'Suklydote'; // Tekstas
+			errorMessage.style.position = 'absolute';
+			errorMessage.style.top = '50%';
+			errorMessage.style.left = '50%';
+			errorMessage.style.transform = 'translate(-50%, -50%)';
+			errorMessage.style.color = 'black';
+			errorMessage.style.backgroundColor = 'rgba(255, 0, 0, 0.5)'; // Pusiau permatomas raudonas fonas
+			errorMessage.style.padding = '20px';
+			errorMessage.style.borderRadius = '10px';
+			errorMessage.style.zIndex = '1000'; // Užtikrina, kad būtų virš kitų elementų
+			testDiv.style.position = 'relative';
+			testDiv.appendChild(errorMessage);
+			setTimeout(() => {
+				errorMessage.remove();
+			}, 1000); // Paslepia pranešimą po 2 sekundžių
+// Įtraukimas pranešimo į <div id="test">
+			document.getElementById("test").style.position = "relative";
+			document.getElementById("test").appendChild(errorMessage);	
+	}
+    // Jei nėra, įrašykite naują rezultatą
+    if (existingResultIndex === -1) {
+        const result = {
+            title: title,
+            answer: answer2,
+            timeTaken: timeTaken
+        };
+	console.log(result); // Parodyti rezultatą konsolėje prieš įtraukiant į masyvą
+	answersRecord.push(result); // Įtraukite rezultatą į masyvą
+    }
 }
 
 // Funkcija Tyrimo INSTRUKCIJOS2/8
@@ -488,19 +556,19 @@ function showResults() {
 document.getElementById("trueButton").addEventListener("click", function () {
   console.log("True button clicked");
   recordAnswer(true, currentImagesArray);
-  showNextImage(currentImagesArray);
+  showNextImage(true, currentImagesArray);
 });
 
 document.getElementById("falseButton").addEventListener("click", function () {
   console.log("False button clicked");
   recordAnswer(false, currentImagesArray);
-  showNextImage(currentImagesArray);
+  showNextImage(false, currentImagesArray);
 });
 
 function resetCurrentImageIndex() {
   currentImageIndex = 0;
 }
-
+/*
 function checkAnswer(userAnswer, correctAnswer) {
   const isCorrect =
     (userAnswer === "Teisingas" && correctAnswer === true) ||
@@ -530,8 +598,99 @@ function showTemporaryMessage(message, messageType) {
     messageElement.remove();
   }, 3000); // Pranešimas išnyks po 3 sekundžių
 }
-
+*/
 function closeWindowOrExitMode() {
   isWindowActive = ""; // Deaktyvuoja visus režimus
   // Kitas langų uždarymo ar režimo pabaigos logika
 }
+document
+        .getElementById("form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          document.querySelector('input[name="amzius"]:checked')
+            ? (document.getElementById("errorasAmzius").style.display = "none")
+            : (document.getElementById("errorasAmzius").style.display =
+                "block");
+
+          document.querySelector('input[name="gender"]:checked')
+            ? (document.getElementById("errorasLytis").style.display = "none")
+            : (document.getElementById("errorasLytis").style.display = "block");
+
+          document.querySelector('input[name="dpatirtis"]:checked')
+            ? (document.getElementById("errorasDpatirtis").style.display =
+                "none")
+            : (document.getElementById("errorasDpatirtis").style.display =
+                "block");
+
+          document.querySelector('input[name="education"]:checked')
+            ? (document.getElementById("errorasIssilavinimas").style.display =
+                "none")
+            : (document.getElementById("errorasIssilavinimas").style.display =
+                "block");
+
+          document.querySelector('input[name="dsritis"]:checked')
+            ? (document.getElementById("errorasDsritis").style.display = "none")
+            : (document.getElementById("errorasDsritis").style.display =
+                "block");
+
+          document.querySelector('input[name="miestas"]:checked')
+            ? (document.getElementById("errorasMiestas").style.display = "none")
+            : (document.getElementById("errorasMiestas").style.display =
+                "block");
+
+          document.querySelector('input[name="pareigos"]:checked')
+            ? (document.getElementById("errorasPareigos").style.display =
+                "none")
+            : (document.getElementById("errorasPareigos").style.display =
+                "block");
+
+          let age = document.querySelector('input[name="amzius"]:checked')
+            .labels[0].innerText;
+          let gender = document.querySelector('input[name="gender"]:checked')
+            .labels[0].innerText;
+          let education = document.querySelector(
+            'input[name="education"]:checked'
+          ).labels[0].innerText;
+          let workExperience = document.querySelector(
+            'input[name="dpatirtis"]:checked'
+          ).labels[0].innerText;
+          let loc = document.querySelector('input[name="miestas"]:checked')
+            .labels[0].innerText;
+          let pareigos = document.querySelector(
+            'input[name="pareigos"]:checked'
+          ).labels[0].innerText;
+          let darboSritis = document.querySelector(
+            'input[name="dsritis"]:checked'
+          ).labels[0].innerText;
+
+          let result = {
+            age: age,
+            gender: gender,
+            education: education,
+            workExperience: workExperience,
+            loc: loc,
+            pareigos: pareigos,
+            darboSritis: darboSritis,
+          };
+
+          answersRecord.push(result);
+
+          console.log("answersRecord", answersRecord);
+          // CIA SIUNCIAMA I BACKENDA
+          fetch(`https://tomowebappasbe.azurewebsites.net/sendData`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            body: JSON.stringify({ testo_duomenys: answersRecord }),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log("ATSAKYMAS IS BE:", data))
+            .catch((error) => console.log("ATSAKYMAS IS BE ERRORAS:", error));
+
+          // tuscia forma aciu bye bye
+          document.getElementById("9").style.display = "none";
+          document.getElementById("aciu").style.display = "block";
+        });
