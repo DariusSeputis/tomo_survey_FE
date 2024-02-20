@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Puslapio Pavadinimas</title>
+    <title>IAT-TYRIMAS</title>
     <link rel="stylesheet" href="styles.css" />
     <meta charset="UTF-8" />
   </head>
   <body>
     <div class="centruotasFlexas" id="Kvietimas">
-      <p>SKIRTINGŲ RASIŲ EMOCIJŲ ATPAŽINIMO TYRIMAS <br /></p>
-      <p>
+      <p class="pirmopuslapioheaderis">
+        SKIRTINGŲ RASIŲ ŽMONIŲ<br />
+        EMOCIJŲ ATPAŽINIMO TYRIMAS<br />
+      </p>
+      <p class="pirmopuslapiotekstas" style="font-weight: bold">
         Kviečiame dalyvauti tyrime, kurio tikslas yra išnagrinėti reakcijos
         laiko skirtumus reaguojant į skirtingų rasių žmonių emocinių išraiškų
         nuotraukas. <br />
       </p>
-      <p style="width: 80%">
-        Dalyvavimas tyrime yra savanoriškas ir anonimiškas. Nutraukti dalyvavimą
-        tyrime galima bet kuriuo metu. Surinkti duomenys bus naudojami tik
-        moksliniais tikslais. Saugant dalyvių anonimiškumą - publikuojami bus
-        tik apibendrinti apklausos rezultatai.
+      <p class="pirmopuslapiotekstas" style="width: 80%">
+        <i>
+          Dalyvavimas tyrime yra savanoriškas ir anonimiškas. Nutraukti
+          dalyvavimą tyrime galima bet kuriuo metu. Surinkti duomenys bus
+          naudojami tik moksliniais tikslais. Saugant dalyvių anonimiškumą -
+          publikuojami bus tik apibendrinti apklausos rezultatai.</i
+        >
         <br />
       </p>
-      <p>
+      <p class="pirmopuslapiotekstas" style="width: 80%">
         Tyrimą atlieka VU psichologijos studijų bakalaurantas Tomas Sadauskas;
-        darbo vadovas dr. A. Izotovas, VU<br />
+        <br />
+        darbo vadovas dr. Aleksandras Izotovas, VU<br />
       </p>
-      <p>Testo trukmė iki 10 minučių.<br /></p>
-      <p>
+      <p class="pirmopuslapiotekstas">
+        <i>Testo trukmė iki 10 minučių.</i><br />
+      </p>
+      <p class="pirmopuslapiotekstas" style="font-weight: bold">
         Jeigu sutinkate dalyvauti tyrime, prašome paspausti mygtuką “SUTINKU”
         .<br />
       </p>
       <button class="butonoSpalva" id="KvietimasButton">SUTINKU</button>
     </div>
     <div id="Aprasymas" style="display: none">
-      <div style="padding-top: 10px" class="centruotasFlexas">
-        <p style="width: 70%; font-size: 25px">
+      <div style="padding-top: 10px" class="centruotasFlexas fontasarialas">
+        <p id="antrasPuslapis" class="pirmopuslapiotekstas">
           Tyrimo metu bus pateikiamos baltaodžių ir juodaodžių žmonių
           nuotraukos, bei malonūs ir nemalonūs žodžiai. Tyrimo dalyvių prašoma
           paspausti A arba L mygtukus suskirstant nuotraukas ir žodžius į
           nurodytas grupes. Tyrimo metu reikės atlikti aštuonias užduočių grupes
           ir pateikti atsakymus į demografinius klausimus.
         </p>
-        <img
-          class="imagas"
-          src=".\images\antropuslapioSShotas.jpg"
-          alt="nuotraukos"
-        />
-        <button class="butonoSpalva" id="AprasasButton">Testi</button>
+        <img class="imagas" src=".\images\Stimulai.png" alt="nuotraukos" />
+        <button class="butonoSpalva" id="AprasasButton">Tęsti</button>
       </div>
     </div>
     <div id="1" style="display: none">
       <div>
-        <p>
+        <p class="pirmopuslapiotekstas">
           Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          <br />
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
         </p>
 
         <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 1/8</p>
-        <p class="padidintasFontas">Prašome paspausti mygtuką:</p>
         <p class="padidintasFontas">
+          Prašome paspausti mygtuką:<br />
           <b>A</b> - jei rodoma juodaodžio nuotrauka
-        </p>
-        <p class="padidintasFontas">
+          <br />
           <b>L</b> - jei rodoma baltaodžio nuotrauka
         </p>
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti greičiau
-          mygtukus, pamačius pateiktą nuotrauką.
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
         </p>
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti A ir L
-          mygtukus. Spauskite space, kad pradėti užduotį.
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 1/8“, kad
+          pereitumėte prie užduoties atlikimo.“
         </p>
       </div>
       <div class="flexCentras">
@@ -77,22 +90,32 @@
     </div>
     <div id="2" style="display: none">
       <div>
-        <p>
+        <p class="pirmopuslapiotekstas">
           Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
         </p>
-        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ2/8</p>
-        <p class="padidintasFontas">Prašome paspausti mygtuką:</p>
-        <p class="padidintasFontas"><b>A</b> - jei rodomas malonus žodis</p>
-        <p class="padidintasFontas"><b>L</b> - jei rodomas nemalonus žodis</p>
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
+        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 2/8<br /></p>
+        <p class="padidintasFontas">
+          Prašome paspausti mygtuką:<br />
+          <b>A</b> - jei rodomas malonus žodis<br /><b>L</b> - jei rodomas
+          nemalonus žodis
         </p>
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti A ir L
-          mygtukus.
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
         </p>
-        <p>Spauskite space, kad pradėti užduotį.</p>
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 2/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="2is8Button">Pradėti 2/8</button>
@@ -100,26 +123,32 @@
     </div>
     <div id="3" style="display: none">
       <div>
-        <p>
+        <p class="pirmopuslapiotekstas">
           Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
         </p>
         <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 3/8</p>
-        <p class="padidintasFontas">Prašome paspausti mygtuką</p>
         <p class="padidintasFontas">
-          <b>A</b> - jei rodoma baltaodžio nuotrauka arba nemalonus žodis
-        </p>
-        <p class="padidintasFontas">
+          Prašome paspausti mygtuką<br />
+          <b>A</b> - jei rodoma baltaodžio nuotrauka arba nemalonus žodis<br />
           <b>L</b> - jei rodoma juodaodžio nuotrauka arba malonus žodis
         </p>
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
         </p>
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti A ir L
-          mygtukus.
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
         </p>
-        <p>Spauskite space, kad pradėti užduotį.</p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 3/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="3is8Button">Pradėti 3/8</button>
@@ -127,24 +156,33 @@
     </div>
     <div id="4" style="display: none">
       <div>
-        <p>
+        <p class="pirmopuslapiotekstas">
           Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
         </p>
         <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 4/8</p>
-        <p class="padidintasFontas">Prašome paspausti mygtuką</p>
         <p class="padidintasFontas">
-          <p><b>A</b> - jei rodoma juodaodžio nuotrauka arba malonus žodis</p>
+          Prašome paspausti mygtuką
+          <br />
+          <b>A</b> - jei rodoma juodaodžio nuotrauka arba malonus žodis
+          <br />
+          <b>L</b> - jei rodoma baltaodžio nuotrauka arba nemalonus žodis
         </p>
-        <p class="padidintasFontas">
-          <b>L</b>- jei rodoma baltaodžio nuotrauka arba nemalonus žodis
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
         </p>
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
         </p>
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spaustiAir L
-          mygtukus. Spauskite space, kad pradėti užduotį.
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 4/8“, kad
+          pereitumėte prie užduoties atlikimo.“
         </p>
       </div>
       <div class="flexCentras">
@@ -153,19 +191,33 @@
     </div>
     <div id="5" style="display: none">
       <div>
-        <p>Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus</p>
-        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 5/8</p> 
-        <p class="padidintasFontas">Prašome paspausti mygtuką</p> 
-        <p class="padidintasFontas"><b>A</b> - jei rodoma baltaodžio nuotrauka</p> 
-        <p class="padidintasFontas"><b>L</b>- jei rodoma juodaodžio nuotrauka</p> 
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
-        </p> 
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti Air L
-          mygtukus. Spauskite space, kad pradėti užduotį.
-        </p> 
+        <p class="pirmopuslapiotekstas">
+          Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
+        </p>
+        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 5/8</p>
+        <p class="padidintasFontas">
+          Prašome paspausti mygtuką<br />
+          <b>A</b> - jei rodoma baltaodžio nuotrauka
+          <br />
+          <b>L</b> - jei rodoma juodaodžio nuotrauka
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 5/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="5is8Button">Pradėti 5/8</button>
@@ -173,19 +225,31 @@
     </div>
     <div id="6" style="display: none">
       <div>
-        <p>Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus</p>
-        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 6/8</p> 
-        <p class="padidintasFontas">Prašome paspausti mygtuką:</p> 
-        <p class="padidintasFontas"><b>A</b> - jei rodomas nemalonus žodis</p> 
-        <p class="padidintasFontas"><b>L</b> - jei rodomas malonus žodis</p> 
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
-        </p> 
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti Air L
-          mygtukus. Spauskite space, kad pradėti užduotį.
-        </p> 
+        <p class="pirmopuslapiotekstas">
+          Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
+        </p>
+        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 6/8</p>
+        <p class="padidintasFontas">
+          Prašome paspausti mygtuką:<br /><b>A</b> - jei rodomas nemalonus
+          žodis<br /><b>L</b> - jei rodomas malonus žodis
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 6/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="6is8Button">Pradėti 6/8</button>
@@ -193,19 +257,33 @@
     </div>
     <div id="7" style="display: none">
       <div>
-        <p>Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus</p>
-        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 7/8</p> 
-        <p class="padidintasFontas">Prašome paspausti mygtuką</p> 
-        <p class="padidintasFontas"><b>A</b> - jei rodoma baltaodžio nuotrauka arba malonus žodis</p> 
-        <p class="padidintasFontas"><b>L</b>- jei rodoma juodaodžio nuotrauka arba nemalonus žodis</p> 
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
-        </p> 
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti A ir L
-          mygtukus. Spauskite space, kad pradėti užduotį.
-        </p> 
+        <p class="pirmopuslapiotekstas">
+          Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
+        </p>
+        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 7/8</p>
+        <p class="padidintasFontas">
+          Prašome paspausti mygtuką<br />
+          <b>A</b> - jei rodoma baltaodžio nuotrauka arba malonus žodis
+          <br />
+          <b>L</b> - jei rodoma juodaodžio nuotrauka arba nemalonus žodis
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 7/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="7is8Button">Pradėti 7/8</button>
@@ -213,19 +291,32 @@
     </div>
     <div id="8" style="display: none">
       <div>
-        <p>Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus</p>
-        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 8/8</p> 
-        <p class="padidintasFontas">Prašome paspausti mygtuką</p> 
-        <p class="padidintasFontas"><b>A</b> - jei rodoma juodaodžio nuotrauka arba nemalonus žodis</p> 
-        <p class="padidintasFontas"><b>L</b>- jei rodoma baltaodžio nuotrauka arba malonus žodis</p> 
-        <p>
-          Tyrimui svarbus maksimalus jūsų greitis,todėl prašome spausti kuo
-          greičiau mygtukus, pamačius pateiktą nuotrauką.
-        </p> 
-        <p>
-          Padėkite rankas patogiai ant klaviatūros pasiruošę spausti A ir L
-          mygtukus. Spauskite space, kad pradėti užduotį.
-        </p> 
+        <p class="pirmopuslapiotekstas">
+          Testas skirtas atlikti kompiuteriu, spaudžiant klaviatūros mygtukus
+          arba mobiliuoju prietaisu spaudžiant mygtukus ekrane.
+        </p>
+        <p class="uzduocGrupesText">UŽDUOČIŲ GRUPĖ 8/8</p>
+        <p class="padidintasFontas">
+          Prašome paspausti mygtuką<br />
+          <b>A</b> - jei rodoma juodaodžio nuotrauka arba nemalonus žodis<br />
+          <b>L</b> - jei rodoma baltaodžio nuotrauka arba malonus žodis
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Tyrimui svarbus maksimalus jūsų atsakymų greitis,todėl prašome
+          pamačius pateiktą nuotrauką kuo greičiau spausti reikiamą atsakymo
+          mygtuką.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Jeigu naudojatės klaviatūra - padėkite rankas patogiai ant klaviatūros
+          pasiruošę spausti A ir L mygtukus.
+          <br />
+          Jeigu naudojatės mobiliuoju prietaisu - rekomenduojame paversti jį į
+          „gulsčiojo ekrano“ poziciją.
+        </p>
+        <p class="pirmopuslapiotekstas">
+          Spauskite klaviatūros mygtuką SPACE arba mygtuką „Pradėti 8/8“, kad
+          pereitumėte prie užduoties atlikimo.“
+        </p>
       </div>
       <div class="flexCentras">
         <button class="butonoSpalva" id="8is8Button">Pradėti 8/8</button>
@@ -241,7 +332,7 @@
       <div>
         <img id="testImage" src="" alt="Testo nuotrauka" />
         <div>
-          <p class="textasPoTestNuotrauka" >Prašome kuo greičiau paspasuti</p>
+          <p class="textasPoTestNuotrauka">Prašome kuo greičiau paspausti</p>
           <p class="textasPoTestNuotrauka" id="textasPoNuotrauka1"></p>
           <p class="textasPoTestNuotrauka" id="textasPoNuotrauka2"></p>
         </div>
@@ -256,6 +347,13 @@
     </div>
 
     <div style="display: none" id="9">
+      <p class="pirmopuslapioheaderis">DEMOGRAFINIAI DUOMENYS</p>
+      <p class="pirmopuslapiotekstas">
+        Labai ačiū už jūsų pateiktus atsakymus. Dabar prašome atsakyti į keletą
+        klausimų apie save. Primename, kad surinkti duomenys bus naudojami tik
+        moksliniais tikslais. Saugant dalyvių anonimiškumą - publikuojami bus
+        tik apibendrinti apklausos rezultatai.
+      </p>
       <form id="form">
         <div>
           <p class="errorMesagai" style="display: none" id="errorasAmzius">
@@ -298,7 +396,7 @@
             Pasirinkite darbo patirti
           </p>
           <fieldset id="workExpInput">
-            <legend>Darbo patirtis policijoje:</legend>
+            <legend>Darbo patirtis vidaus tarnyboje:</legend>
             <input type="radio" id="dpatirtis0" name="dpatirtis" />
             <label for="dpatirtis0">0-5 metai</label> <br />
             <input type="radio" id="dpatirtis6" name="dpatirtis" />
@@ -382,9 +480,10 @@
           </fieldset>
         </div>
 
-        <button class="butonoSpalva" type="submit">Pateikti</button>
+        <button class="butonoSpalva" type="submit">Kitas</button>
       </form>
     </div>
+    <div id="10" style="display: none"></div>
     <p
       id="aciu"
       style="

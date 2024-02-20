@@ -21,17 +21,16 @@ body {
   flex-direction: column;
 }
 
-.butonoSpalva {
-  background-color: #cdbc82;
-  max-height: 45px;
-}
-
 #imageContainer {
   margin: 20px;
 }
 
 #Kvietimas {
   text-align: center; /* Centruoja visą tekstą bloke */
+}
+.butonoSpalva {
+  background-color: #cdbc82;
+  /* max-height: 45px; */
 }
 
 #KvietimasButton {
@@ -47,9 +46,9 @@ body {
 }
 
 button {
-  margin: 10px;
-  padding: 10px;
-  font-size: 16px;
+  /* margin: 15px; */
+  padding: 20px;
+  font-size: 30px;
 }
 .temporary-message {
   position: fixed;
@@ -148,10 +147,10 @@ fieldset {
 }
 
 .padidintasFontas {
-  font-size: 18px;
+  font-size: 35px;
 }
 .uzduocGrupesText {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 #test {
@@ -173,9 +172,37 @@ fieldset {
 }
 
 .textasPoTestNuotrauka {
+  font-size: 30px;
+}
+#antrasPuslapis {
+  width: 70%;
+}
+
+.pirmopuslapioheaderis {
+  font-size: 50px !important;
+}
+.pirmopuslapiotekstas {
+  font-size: 30px !important;
+}
+
+.fontasarialas {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form label,
+form legend {
+  font-size: 25px;
+}
+
+form legend {
+  font-style: bold;
 }
 
 @media (max-width: 1200px) {
+  form label,
+  form legend {
+    font-size: 20px;
+  }
   /* CSS taisyklės mažesniems ekranams (pvz., mobiliesiems) */
   #trueButtonDivas,
   #falseButtonDivas {
@@ -201,9 +228,38 @@ fieldset {
     width: 7rem;
     margin-top: 20%;
   }
+  .pirmopuslapioheaderis {
+    font-size: 30px !important;
+  }
+  .pirmopuslapiotekstas {
+    font-size: 20px !important;
+  }
+  button {
+    /* margin: 15px; */
+    padding: 15px;
+    font-size: 20px;
+  }
+  .uzduocGrupesText {
+    font-size: 22px;
+  }
+  .padidintasFontas {
+    font-size: 30px;
+  }
+  .textasPoTestNuotrauka {
+    font-size: 25px;
+  }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
+  form label,
+  form legend {
+    font-size: 15px;
+  }
+  #antrasPuslapis {
+  }
+  .imagas {
+    width: 45%;
+  }
   #form {
     grid-template-columns: 1fr 1fr;
   }
@@ -211,7 +267,7 @@ fieldset {
     width: 200px;
   }
   .textasPoTestNuotrauka {
-    font-size: 15px;
+    font-size: 16px;
   }
   #textvirsA,
   #textvirsA1,
@@ -221,9 +277,26 @@ fieldset {
   #textvirsL2 {
     font-size: 14px;
   }
+  .pirmopuslapioheaderis {
+    font-size: 20px !important;
+  }
+  .pirmopuslapiotekstas {
+    font-size: 15px !important;
+  }
+  button {
+    /* margin: 15px; */
+    padding: 10px;
+    font-size: 16px;
+  }
+  .uzduocGrupesText {
+    font-size: 20px;
+  }
+  .padidintasFontas {
+    font-size: 25px;
+  }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   #form {
     grid-template-columns: 1fr;
   }
