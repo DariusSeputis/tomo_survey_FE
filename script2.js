@@ -254,14 +254,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		performAction(); // Atnaujina būseną,
 		updateState(10);; // Iškviečia funkciją 'startAprasas'
 	});
-	document.getElementById('kitas').addEventListener('click', function() {
-		performAction(); // Atnaujina būseną,
-		updateState(11);; // Iškviečia funkciją 'startAprasas'
-	});
-	document.getElementById('pateikti').addEventListener('click', function() {
-		performAction(); // Atnaujina būseną,
-		updateState(12);; // Iškviečia funkciją 'startAprasas'
-	});
+
+  // globalus formos ir toliau esanciu puslapiu "space" funkcionalumas
+	// document.getElementById('kitas').addEventListener('click', function() {
+	// 	performAction(); // Atnaujina būseną,
+	// 	updateState(11);; // Iškviečia funkciją 'startAprasas'
+	// });
+	// document.getElementById('pateikti').addEventListener('click', function() {
+	// 	performAction(); // Atnaujina būseną,
+	// 	updateState(12);; // Iškviečia funkciją 'startAprasas'
+	// });
 	
 document.addEventListener('keydown', function(event) {
     // Instrukcijų režimas: reaguoja tik į 'Space' klavišą
@@ -317,12 +319,12 @@ function performAction() {
     case 9:
       startTest8();
       break;
-	case 10:
-      instrukction(10);
-      break;
-	case 11:
-      instrukction(11);
-      break;
+	// case 10:
+  //     instrukction(10);
+  //     break;
+	// case 11:
+  //     instrukction(11);
+  //     break;
   }
 }
 
@@ -649,7 +651,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   document.querySelector('input[name="amzius"]:checked')
     ? (document.getElementById("errorasAmzius").style.display = "none")
     : (document.getElementById("errorasAmzius").style.display = "block");
-
+  
   document.querySelector('input[name="gender"]:checked')
     ? (document.getElementById("errorasLytis").style.display = "none")
     : (document.getElementById("errorasLytis").style.display = "block");
@@ -673,6 +675,8 @@ document.getElementById("form").addEventListener("submit", function (event) {
   document.querySelector('input[name="pareigos"]:checked')
     ? (document.getElementById("errorasPareigos").style.display = "none")
     : (document.getElementById("errorasPareigos").style.display = "block");
+
+  console.log("age",document.querySelector('input[name="amzius"]:checked').labels[0].innerText)
 
   let age = document.querySelector('input[name="amzius"]:checked').labels[0]
     .innerText;
@@ -700,4 +704,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
   };
 
   answersRecord.push(result);
+
+  document.getElementById("9").style.display = "none";
+  document.getElementById("10").style.display = "block";
 });
