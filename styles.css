@@ -88,9 +88,10 @@ button {
   gap: 1rem;
 }
 
-#testImage {
-  max-width: 100%; /* Užtikrina, kad nuotrauka prisitaikytų prie ekrano dydžio */
-  height: auto;
+#testImage { 
+  /* max-width: 100%; Užtikrina, kad nuotrauka prisitaikytų prie ekrano dydžio */
+  /* height: auto;  */
+  width: 55% !important;
 }
 
 button {
@@ -108,14 +109,6 @@ button {
   height: 8rem;
   width: 8rem;
   margin-top: 20%;
-}
-
-#textvirsA,
-#textvirsA1,
-#textvirsA2,
-#textvirsL,
-#textvirsL1,
-#textvirsL2 {
 }
 
 #trueButtonDivas,
@@ -199,6 +192,10 @@ form legend {
 }
 
 @media (max-width: 1200px) {
+  #testImage {
+    width: 55% !important;
+  }
+
   form label,
   form legend {
     font-size: 20px;
@@ -246,7 +243,7 @@ form legend {
     font-size: 30px;
   }
   .textasPoTestNuotrauka {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
@@ -255,17 +252,15 @@ form legend {
   form legend {
     font-size: 15px;
   }
-  #antrasPuslapis {
-  }
   .imagas {
     width: 45%;
   }
   #form {
     grid-template-columns: 1fr 1fr;
   }
-  #testImage {
-    width: 200px;
-  }
+  /* #testImage {
+    width: 200px !important;
+  } */
   .textasPoTestNuotrauka {
     font-size: 16px;
   }
@@ -300,7 +295,7 @@ form legend {
   #form {
     grid-template-columns: 1fr;
   }
-  #testImage {
+  /* #testImage {
     width: 150px;
-  }
+  } */
 }

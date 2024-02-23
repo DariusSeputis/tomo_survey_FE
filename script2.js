@@ -7,6 +7,27 @@ let currentTest = 1;
 let isWindowActive = "instruction"; // Galimos reikšmės: '', 'test', 'instruction'
 var currentState = 0;
 
+// paskutinio batono paemimas ir funcija
+const button = document.getElementById('pateikti');
+button.addEventListener('click', function() {
+    // CIA SIUNCIAMA I BACKENDA
+    fetch(`https://tomowebappasbe.azurewebsites.net/sendData`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: JSON.stringify({ testo_duomenys: answersRecord }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log("ATSAKYMAS IS BE:", data))
+      .catch((error) => console.log("ATSAKYMAS IS BE ERRORAS:", error));
+
+      document.getElementById("10").style.display = "none";
+      document.getElementById("11").style.display = "block";
+  
+});
+
 const imagesSET1 = [
   // A- jei rodomas juodaodis; L- jei rodomas baltaodis
   { url: "images/BV2.jpg", value: false, title: "B1K1" },
@@ -190,68 +211,75 @@ function setCurrentImagesArray(array) {
   currentImagesArray = array;
 }
 // Eventas, kuris laukia klavišų paspaudimo ir užrašo atsakymą (true arba false) į rezultatus
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("KvietimasButton")
-    .addEventListener("click", function () {
-      performAction(); // Atnaujina būseną,
-      updateState(1); // Iškviečia funkciją 'startAprasas'
-    });
-  document
-    .getElementById("AprasasButton")
-    .addEventListener("click", function () {
-      performAction(); // Atnaujina būseną
-      updateState(2); // Iškviečia funkciją 'startAprasas',
-    });
-  document.getElementById("1is8Button").addEventListener("click", function () {
-    performAction(); // Atnaujina būseną,
-    updateState(3); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("2is8Button").addEventListener("click", function () {
-    performAction();
-    updateState(4); // Iškviečia funkcijąkur 'startAprasas'
-  });
-  document.getElementById("3is8Button").addEventListener("click", function () {
-    performAction();
-    updateState(5); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("4is8Button").addEventListener("click", function () {
-    performAction();
-    updateState(6); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("5is8Button").addEventListener("click", function () {
-    performAction(); // Atnaujina būseną,
-    updateState(7); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("6is8Button").addEventListener("click", function () {
-    performAction(); // Atnaujina būseną,
-    updateState(8); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("7is8Button").addEventListener("click", function () {
-    performAction(); // Atnaujina būseną,
-    updateState(9); // Iškviečia funkciją 'startAprasas'
-  });
-  document.getElementById("8is8Button").addEventListener("click", function () {
-    performAction(); // Atnaujina būseną,
-    updateState(10); // Iškviečia funkciją 'startAprasas'
-  });
+document.addEventListener('DOMContentLoaded', function() {
+	document.getElementById('KvietimasButton').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(1); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('AprasasButton').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną
+		updateState(2); // Iškviečia funkciją 'startAprasas',
+	});
+	document.getElementById('1is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(3); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('2is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(4); // Iškviečia funkcijąkur 'startAprasas'
 
-  document.addEventListener("keydown", function (event) {
+	});
+	document.getElementById('3is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(5); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('4is8Button').addEventListener('click', function() {
+		performAction();
+		updateState(6); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('5is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(7); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('6is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(8); // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('7is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(9);; // Iškviečia funkciją 'startAprasas'
+
+	});
+	document.getElementById('8is8Button').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(10);; // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('kitas').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(11);; // Iškviečia funkciją 'startAprasas'
+	});
+	document.getElementById('pateikti').addEventListener('click', function() {
+		performAction(); // Atnaujina būseną,
+		updateState(12);; // Iškviečia funkciją 'startAprasas'
+	});
+	
+document.addEventListener('keydown', function(event) {
     // Instrukcijų režimas: reaguoja tik į 'Space' klavišą
-    if (event.key === " ") {
-      performAction(); // Atlikti veiksmą pagal esamą būseną
-      updateState(currentState + 1); // Pereiti į kitą būseną
+    if (event.key === ' ' & isWindowActive === 'instruction') {
+        performAction(); // Atlikti veiksmą pagal esamą būseną
+        updateState(currentState + 1); // Pereiti į kitą būseną
     }
     // Testo režimas: reaguoja tik į 'A' ir 'L' klavišus
-    if (isWindowActive === "test") {
-      if (event.key === "A" || event.key === "a") {
-        document.getElementById("trueButton").click();
-      } else if (event.key === "L" || event.key === "l") {
-        document.getElementById("falseButton").click();
-      }
+    if (isWindowActive === 'test') {
+        if (event.key === 'A' || event.key === 'a') {
+        document.getElementById('trueButton').click();
+    } else if (event.key === 'L' || event.key === 'l') {
+        document.getElementById('falseButton').click();
     }
-  });
+    }
 });
+});
+
 
 function updateState(newState) {
   currentState = newState;
@@ -288,6 +316,12 @@ function performAction() {
       break;
     case 9:
       startTest8();
+      break;
+	case 10:
+      instrukction(10);
+      break;
+	case 11:
+      instrukction(11);
       break;
   }
 }
@@ -543,6 +577,7 @@ function recordAnswer(answer, imagesArray) {
 // Funkcija Tyrimo INSTRUKCIJOS2/8
 function instrukction(div) {
   isWindowActive = "instruction";
+  document.getElementById(div-1).style.display = "none";
   document.getElementById(div).style.display = "grid";
   document.getElementById("test").style.display = "none";
 }
@@ -665,25 +700,4 @@ document.getElementById("form").addEventListener("submit", function (event) {
   };
 
   answersRecord.push(result);
-
-  // CIA SIUNCIAMA I BACKENDA
-  fetch(`https://tomowebappasbe.azurewebsites.net/sendData`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    body: JSON.stringify({ testo_duomenys: answersRecord }),
-  })
-    .then((res) => res.json())
-    .then((data) => console.log("ATSAKYMAS IS BE:", data))
-    .catch((error) => console.log("ATSAKYMAS IS BE ERRORAS:", error));
-
-  document.getElementById("aciu").style.display = "block";
-  document.getElementById("10").style.display = "none";
-  //-------------------------------------------------------------------
-
-  // tuscia forma aciu bye bye
-  document.getElementById("10").style.display = "block";
-  document.getElementById("9").style.display = "none";
 });
