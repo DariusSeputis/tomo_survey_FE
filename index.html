@@ -16,13 +16,11 @@
         laiko skirtumus reaguojant į skirtingų rasių žmonių emocinių išraiškų
         nuotraukas. <br />
       </p>
-      <p class="pirmopuslapiotekstas" style="width: 80%">
-        <i>
+      <p class="pirmopuslapiotekstas italikas" style="width: 80%">
           Dalyvavimas tyrime yra savanoriškas ir anonimiškas. Nutraukti
           dalyvavimą tyrime galima bet kuriuo metu. Surinkti duomenys bus
           naudojami tik moksliniais tikslais. Saugant dalyvių anonimiškumą -
-          publikuojami bus tik apibendrinti apklausos rezultatai.</i
-        >
+          publikuojami bus tik apibendrinti apklausos rezultatai.
         <br />
       </p>
       <p class="pirmopuslapiotekstas" style="width: 80%">
@@ -30,8 +28,7 @@
         <br />
         darbo vadovas dr. Aleksandras Izotovas, VU<br />
       </p>
-      <p class="pirmopuslapiotekstas">
-        <i>Testo trukmė iki 10 minučių.</i><br />
+      <p class="pirmopuslapiotekstas italikas">Testo trukmė iki 10 minučių.<br />
       </p>
       <p class="pirmopuslapiotekstas" style="font-weight: bold">
         Jeigu sutinkate dalyvauti tyrime, prašome paspausti mygtuką “SUTINKU”
@@ -387,7 +384,7 @@
             <input type="radio" id="Moteris" name="gender" />
             <label for="Moteris">Moteris</label> <br />
             <input type="radio" id="Kita" name="gender" />
-            <label for="Kita">Kita/Nenoriu atskleisti</label> <br />
+            <label for="Kita">Kita</label> <br />
           </fieldset>
         </div>
 
@@ -420,14 +417,18 @@
           </p>
           <fieldset id="eduInput">
             <legend>Išsilavinimas:</legend>
+            <input type="radio" id="nebaigtasvidurinis" name="education" />
+            <label for="nebaigtasvidurinis">Nebaigtas vidurinis</label> <br />
             <input type="radio" id="vidurinis" name="education" />
             <label for="vidurinis">Vidurinis</label> <br />
             <input type="radio" id="profesinis" name="education" />
             <label for="profesinis">Profesinis</label> <br />
-            <input type="radio" id="aukstesnysis" name="education" />
-            <label for="aukstesnysis">Aukštesnysis</label> <br />
-            <input type="radio" id="aukstasis" name="education" />
-            <label for="aukstasis">Aukštasis</label> <br />
+            <input type="radio" id="nebaigtAukst" name="education" />
+            <label for="nebaigtAukst">Nebaigtas aukštasis</label> <br />
+            <input type="radio" id="aukstasisNeuniver" name="education" />
+            <label for="aukstasisNeuniver">Aukštasis neunivesitetinis</label> <br />
+            <input type="radio" id="aukstasisUniver" name="education" />
+            <label for="aukstasisUniver">Aukštasis universitetinis</label> <br />
           </fieldset>
         </div>
 
@@ -452,18 +453,12 @@
           </p>
           <fieldset id="locInput">
             <legend>Miestas kuriame gyvenate:</legend>
-            <input type="radio" id="Vilnius" name="miestas" />
-            <label for="Vilnius">Vilnius</label> <br />
-            <input type="radio" id="Kaunas" name="miestas" />
-            <label for="Kaunas">Kaunas</label> <br />
-            <input type="radio" id="Klaipeda" name="miestas" />
-            <label for="Klaipeda">Klaipėda</label> <br />
-            <input type="radio" id="Siauliai" name="miestas" />
-            <label for="Siauliai">Šiauliai</label> <br />
-            <input type="radio" id="Panevezys" name="miestas" />
-            <label for="Panevezys">Panevėžys</label> <br />
-            <input type="radio" id="miestasKita" name="miestas" />
-            <label for="miestasKita">Kita</label> <br />
+            <input type="radio" id="didmiestis" name="miestas" />
+            <label for="didmiestis">Didmiestis (Vilnius, Kaunas, Klaipėda, Šiauliai, Panevėžys)</label> <br />
+            <input type="radio" id="miestas" name="miestas" />
+            <label for="miestas">Miestas</label> <br />
+            <input type="radio" id="miestelisKaimas" name="miestas" />
+            <label for="miestelisKaimas">Miestelis/ kaimas</label> <br />
           </fieldset>
         </div>
 
@@ -514,6 +509,6 @@
       AČIŪ UŽ DALYVAVIMĄ!
     </p>
 	</div>
-    <script src="script2.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

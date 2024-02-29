@@ -8,6 +8,10 @@ body {
   min-height: 100dvh;
 }
 
+.italikas {
+  font-style: italic;
+}
+
 /* antro puslapio nuotrauka */
 .imagas {
   max-width: 900px;
@@ -172,10 +176,10 @@ fieldset {
 }
 
 .pirmopuslapioheaderis {
-  font-size: 50px !important;
+  font-size: 45px !important;
 }
 .pirmopuslapiotekstas {
-  font-size: 30px !important;
+  font-size: 25px !important;
 }
 
 .fontasarialas {
@@ -226,10 +230,10 @@ form legend {
     margin-top: 20%;
   }
   .pirmopuslapioheaderis {
-    font-size: 30px !important;
+    font-size: 25px !important;
   }
   .pirmopuslapiotekstas {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
   button {
     /* margin: 15px; */
@@ -276,7 +280,7 @@ form legend {
     font-size: 20px !important;
   }
   .pirmopuslapiotekstas {
-    font-size: 15px !important;
+    font-size: 14px !important;
   }
   button {
     /* margin: 15px; */
